@@ -1,0 +1,24 @@
+version: '3.1'
+
+services:
+    postgres:
+      restart: always
+      image: mdillon/postgis:10
+      ports:
+        - "5432:5432"
+      volumes:
+        - pgisdata:/var/lib/postgresql/data/
+    web:
+      build:
+        context: ./app
+        dockerfile: Dockerfile
+      command: python manage.py runserver 0.0.0.0:8000
+      volumes:
+        - ./app:/app
+      env_file: .env
+      ports:
+        - "$DJANGO_PORT:8000"
+      depends_on:
+        - postgres
+volumes:
+    pgisdata:
