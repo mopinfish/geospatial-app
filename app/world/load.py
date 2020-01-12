@@ -18,7 +18,7 @@ world_mapping = {
 }
 
 world_shp = os.path.abspath(
-    os.path.join(os.path.dirname(__file__), 'TM_WORLD_BORDERS-0.3.shp'),
+    os.path.join(os.path.dirname(__file__), 'data', 'TM_WORLD_BORDERS-0.3.shp'),
 )
 
 def run(verbose=True):
