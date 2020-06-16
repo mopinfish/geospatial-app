@@ -32,4 +32,5 @@ urlpatterns = [
     path('api/', include(router.urls)),
     path('', index, name='world_index'),
     path('world/geojson/', GeojsonAPIView.as_view(), name='geojson_view'),
+    path('accounts/', include('django.contrib.auth.urls')),
 ]

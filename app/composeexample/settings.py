@@ -74,6 +74,7 @@ TEMPLATES = [
                 'django.contrib.messages.context_processors.messages',
             ],
         },
+        'DIRS': [os.path.join(BASE_DIR, 'templates')], 
     },
 ]
 
@@ -138,3 +139,7 @@ from django.contrib import admin
 admin.AdminSite.site_title  = 'GeoDjangoログイン'
 admin.AdminSite.site_header = 'GeoDjangoハンズオン'
 admin.AdminSite.index_title = 'GeoDjangoメニュー'
+
+LOGIN_URL='/accounts/login'
+LOGIN_REDIRECT_URL='/'
+LOGOUT_REDIRECT_URL='/'
