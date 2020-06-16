@@ -129,9 +129,8 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
 
+from django.contrib import admin
 
-#from django.contrib.gis import admin
-#
-#admin.site.site_title  = 'GeoDjangoログイン'
-#admin.site.site_header = 'GeoDjangoハンズオン'
-#admin.site.index_title = 'GeoDjangoメニュー'
+admin.AdminSite.site_title  = 'GeoDjangoログイン'
+admin.AdminSite.site_header = 'GeoDjangoハンズオン'
+admin.AdminSite.index_title = 'GeoDjangoメニュー'

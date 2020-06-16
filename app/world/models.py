@@ -38,6 +38,9 @@ class Border(models.Model):
         return self.n03_004
 
 class School(models.Model):
+    class Meta:
+        verbose_name = '小学校区データ'  # オブジェクトの人間が読める名前(単数)小文字でよい
+        verbose_name_plural = '小学校区データ'  # オブジェクトの複数の名前 小文字でよい
     a27_001 = models.CharField(max_length=50)
     a27_002 = models.CharField(max_length=50)
     a27_003 = models.CharField(max_length=50)
@@ -48,6 +51,9 @@ class School(models.Model):
         return self.a27_003
 
 class Facility(models.Model):
+    class Meta:
+        verbose_name = '公共施設データ'  # オブジェクトの人間が読める名前(単数)小文字でよい
+        verbose_name_plural = '公共施設データ'  # オブジェクトの複数の名前 小文字でよい
     p02_001 = models.CharField(max_length=50)
     p02_002 = models.CharField(max_length=50)
     p02_003 = models.CharField(max_length=50)
@@ -61,6 +67,9 @@ class Facility(models.Model):
         return self.p02_004
 
 class Busstop(models.Model):
+    class Meta:
+        verbose_name = 'バス停留所データ'  # オブジェクトの人間が読める名前(単数)小文字でよい
+        verbose_name_plural = 'バス停留所データ'  # オブジェクトの複数の名前 小文字でよい
     p11_001 = models.CharField(max_length=256)
     p11_002 = models.CharField(max_length=256)
     p11_003_1 = models.CharField(max_length=256)
