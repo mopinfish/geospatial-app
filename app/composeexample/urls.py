@@ -13,11 +13,23 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
-from django.contrib import admin
-from django.urls import path
-#from django.contrib.gis import admin
-#from django.urls import include, path
+from django.contrib.gis import admin
+from django.urls import include, path
+from rest_framework.routers import DefaultRouter
+
+from world.views import BorderViewSet, SchoolViewSet, FacilityViewSet, BusstopViewSet
+from world.views import index, GeojsonAPIView
+from django.views.generic.base import RedirectView
+
+router = DefaultRouter()
+router.register('border', BorderViewSet)
+router.register('school', SchoolViewSet)
+router.register('facility', FacilityViewSet)
+router.register('busstop', BusstopViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('api/', include(router.urls)),
+    path('', index, name='world_index'),
+    path('world/geojson/', GeojsonAPIView.as_view(), name='geojson_view'),
 ]

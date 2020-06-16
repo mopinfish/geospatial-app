@@ -10,5 +10,8 @@ RUN apt-get update -y &&\
 RUN pip install django-leaflet
 # Import Errorが出たので明示的に読み込む
 RUN pip install six
+RUN pip install djangorestframework-gis
+RUN pip install django-filter
+RUN pip install markdown
 RUN pip install -r requirements.txt
 COPY . /app/
